@@ -1,403 +1,58 @@
-<!DOCTYPE html>
-<html <html
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Institution Mixte Excelsior de Delatte</title>
-<link index.html" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --navy:#132A4E;
-    --blue:#2C5490;
-    --sky:#5F8DC9;
-    --paper:#F6F8FC;
-    --white:#FFFFFF;
-    --gold:#E0A331;
-    --ink:#1B2430;
-    --line:#D8E1EF;
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    font-family:'Work Sans',sans-serif;
-    color:var(--ink);
-    background:var(--paper);
-    line-height:1.55;
-  }
-  h1,h2,h3{font-family:'Fraunces',serif;color:var(--navy);}
-  a{color:inherit;text-decoration:none;}
-  img{max-width:100%;display:block;}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+Skip to content
+excelsior-delatte
+Repository navigation
+Code
+Issues
+Pull requests
+0 stars
+0 forks
+0 watching
+1 branch
+0 tags
+Activity
+Public repository
+excelsiordelatte
+excelsiordelatte
+4 hours ago
+Name	
+.github/workflows
+yesterday
+index.html
+4 hours ago
+Repository files navigation
+README
+Add a README
+Help people interested in this repository understand your project.
 
-  /* NAV */
-  header{
-    position:sticky;top:0;z-index:50;
-    background:var(--navy);
-    border-bottom:3px solid var(--gold);
-  }
-  .navbar{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:14px 24px;max-width:1080px;margin:0 auto;
-  }
-  .brand{display:flex;align-items:center;gap:12px;color:var(--white);}
-  .brand-mark{
-    width:40px;height:40px;border-radius:50%;
-    background:linear-gradient(135deg,var(--sky),var(--blue));
-    display:flex;align-items:center;justify-content:center;
-    font-family:'Fraunces',serif;font-weight:700;color:var(--white);
-    font-size:18px;border:2px solid var(--gold);
-    flex-shrink:0;
-  }
-  .brand-text{font-family:'Fraunces',serif;font-weight:700;font-size:16px;line-height:1.25;color:var(--white);}
-  .brand-text span{display:block;font-family:'Work Sans',sans-serif;font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--sky);}
-  nav ul{list-style:none;display:flex;gap:28px;}
-  nav a{color:var(--white);font-weight:500;font-size:15px;padding:6px 2px;border-bottom:2px solid transparent;transition:border-color .2s;}
-  nav a:hover, nav a:focus-visible{border-color:var(--gold);outline:none;}
-  .nav-toggle{display:none;background:none;border:none;color:var(--white);font-size:26px;cursor:pointer;}
-
-  @media(max-width:720px){
-    nav ul{
-      position:fixed;top:70px;left:0;right:0;
-      flex-direction:column;background:var(--navy);
-      padding:16px 24px;gap:14px;
-      transform:translateY(-150%);transition:transform .25s ease;
-      border-bottom:3px solid var(--gold);
-    }
-    nav ul.open{transform:translateY(0);}
-    .nav-toggle{display:block;}
-  }
-
-  /* HERO */
-  .hero{
-    background:linear-gradient(160deg,var(--navy) 0%,var(--blue) 62%,var(--sky) 100%);
-    color:var(--white);padding:76px 0 90px;position:relative;overflow:hidden;
-  }
-  .hero::after{
-    content:"";position:absolute;right:-60px;bottom:-60px;width:280px;height:280px;
-    border:2px solid rgba(255,255,255,.18);border-radius:50%;
-  }
-  .hero::before{
-    content:"";position:absolute;right:40px;bottom:-120px;width:280px;height:280px;
-    border:2px solid rgba(224,163,49,.35);border-radius:50%;
-  }
-  .hero .wrap{position:relative;z-index:2;}
-  .eyebrow{
-    display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--gold);font-weight:600;margin-bottom:14px;
-  }
-  .hero h1{font-size:clamp(32px,5vw,52px);font-weight:900;max-width:680px;line-height:1.1;}
-  .hero p.lead{margin-top:18px;max-width:560px;font-size:17px;color:#DCE6F5;}
-  .hero-actions{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;}
-  .btn{
-    display:inline-block;padding:13px 26px;border-radius:4px;font-weight:600;font-size:15px;
-    transition:transform .15s ease, box-shadow .15s ease;
-  }
-  .btn-gold{background:var(--gold);color:var(--navy);}
-  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(224,163,49,.35);}
-  .btn-ghost{border:1.5px solid rgba(255,255,255,.5);color:var(--white);}
-  .btn-ghost:hover{border-color:var(--white);background:rgba(255,255,255,.08);}
-
-  .hero-strip{
-    margin-top:46px;display:flex;gap:0;flex-wrap:wrap;
-    border-top:1px solid rgba(255,255,255,.2);padding-top:24px;
-  }
-  .hero-strip div{padding-right:36px;}
-  .hero-strip strong{display:block;font-family:'Fraunces',serif;font-size:22px;color:var(--gold);}
-  .hero-strip span{font-size:13px;color:#C7D6EC;}
-
-  /* SECTION generic */
-  section{padding:74px 0;}
-  .section-head{max-width:620px;margin-bottom:44px;}
-  .section-head .eyebrow{color:var(--blue);}
-  .section-head h2{font-size:clamp(26px,3.4vw,36px);font-weight:700;}
-  .section-head p{margin-top:12px;color:#4A5568;font-size:16px;}
-
-  /* APWOPO */
-  #apwopo{background:var(--white);}
-  .apwopo-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start;}
-  @media(max-width:800px){.apwopo-grid{grid-template-columns:1fr;}}
-  .apwopo-grid p{color:#4A5568;margin-bottom:16px;}
-  .levels{
-    background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:26px 28px;
-  }
-  .levels h3{font-size:18px;margin-bottom:14px;}
-  .levels ul{list-style:none;}
-  .levels li{
-    display:flex;justify-content:space-between;gap:12px;
-    padding:11px 0;border-bottom:1px solid var(--line);font-size:14.5px;
-  }
-  .levels li:last-child{border-bottom:none;}
-  .levels li b{color:var(--navy);font-weight:600;}
-  .levels li span{color:#5A6B85;text-align:right;}
-
-  /* ENSKRIPSYON */
-  #enskripsyon{background:var(--paper);}
-  .ensk-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
-  @media(max-width:800px){.ensk-grid{grid-template-columns:1fr;}}
-  .req-card{
-    background:var(--white);border:1px solid var(--line);border-radius:8px;padding:28px;
-  }
-  .req-card h3{font-size:18px;margin-bottom:16px;}
-  .req-card ol{padding-left:20px;color:#3A4658;}
-  .req-card ol li{margin-bottom:10px;font-size:15px;}
-  .req-card .fee{
-    margin-top:20px;padding:14px 16px;background:var(--paper);border-left:3px solid var(--gold);
-    font-size:14.5px;border-radius:4px;
-  }
-  form{
-    background:var(--white);border:1px solid var(--line);border-radius:8px;padding:28px;
-  }
-  form h3{font-size:18px;margin-bottom:6px;}
-  form p.note{font-size:13px;color:#6B7A93;margin-bottom:20px;}
-  .field{margin-bottom:16px;}
-  .field label{display:block;font-size:13.5px;font-weight:600;color:var(--navy);margin-bottom:6px;}
-  .field input, .field select, .field textarea{
-    width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:5px;
-    font-family:'Work Sans',sans-serif;font-size:14.5px;background:var(--paper);
-  }
-  .field input:focus, .field select:focus, .field textarea:focus{
-    outline:2px solid var(--blue);outline-offset:1px;background:var(--white);
-  }
-  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-  @media(max-width:520px){.field-row{grid-template-columns:1fr;}}
-  form button{
-    width:100%;background:var(--navy);color:var(--white);border:none;
-    padding:14px;border-radius:5px;font-weight:600;font-size:15px;cursor:pointer;
-    transition:background .2s;
-  }
-  form button:hover{background:var(--blue);}
-  #form-status{margin-top:12px;font-size:13.5px;}
-
-  /* GALRI */
-  #galri{background:var(--white);}
-  .galri-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
-  @media(max-width:760px){.galri-grid{grid-template-columns:repeat(2,1fr);}}
-  .galri-item{
-    aspect-ratio:4/3;border-radius:6px;
-    background:linear-gradient(135deg,var(--sky),var(--blue));
-    display:flex;align-items:center;justify-content:center;
-    color:rgba(255,255,255,.85);font-size:13px;text-align:center;padding:10px;
-    border:1px solid var(--line);
-  }
-  .galri-item:nth-child(3n+1){background:linear-gradient(135deg,var(--navy),var(--blue));}
-  .galri-item:nth-child(3n+2){background:linear-gradient(135deg,var(--blue),var(--gold));}
-
-  /* FOOTER */
-  footer{background:var(--navy);color:#C7D6EC;padding:48px 0 26px;}
-  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:36px;margin-bottom:36px;}
-  @media(max-width:700px){.footer-grid{grid-template-columns:1fr;}}
-  footer h4{color:var(--white);font-family:'Fraunces',serif;font-size:16px;margin-bottom:14px;}
-  footer p, footer li{font-size:14px;color:#AEC1DE;}
-  footer ul{list-style:none;}
-  footer li{margin-bottom:8px;}
-  .footer-bottom{
-    border-top:1px solid rgba(255,255,255,.12);padding-top:20px;
-    font-size:12.5px;color:#8CA2C4;text-align:center;
-  }
-</style>
-</head>
-<body>
-
-<header>
-  <div class="navbar">
-    <div class="brand">
-      <div class="brand-mark">ED</div>
-      <div class="brand-text">Excelsior de Delatte
-        <span>Institution Mixte</span>
-      </div>
-    </div>
-    <button class="nav-toggle" id="navToggle" aria-label="Louvri meni">&#9776;</button>
-    <nav>
-      <ul id="navMenu">
-        <li><a href="#akey">Akèy</a></li>
-        <li><a href="#apwopo">Apwopo</a></li>
-        <li><a href="#enskripsyon">Enskripsyon</a></li>
-        <li><a href="#galri">Galri Foto</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<section id="akey" class="hero">
-  <div class="wrap">
-    <span class="eyebrow">Delatte 7e Petit-Goâve</span>
-    <h1>Yon fondasyon solid pou timoun Delatte yo, depi Préscolaire rive Segondè.</h1>
-    <p class="lead">Institution Mixte Excelsior de Delatte akeyi elèv ak fanmi ak yon ansèyman ki serye, ak yon ekip ki angaje pou reyisit chak timoun.</p>
-    <div class="hero-actions">
-      <a href="#enskripsyon" class="btn btn-gold">Enskri kounye a</a>
-      <a href="#apwopo" class="btn btn-ghost">Aprann plis</a>
-    </div>
-    <div class="hero-strip">
-      <div><strong>5</strong><span>Nivo ansèyman</span></div>
-      <div><strong>Preskolè&nbsp;→&nbsp;Segondè</strong><span>Yon sèl chemen, de bout an bout</span></div>
-      <div><strong>Kafou Dépêche #79</strong><span>Nan kè Delatte</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="apwopo">
-  <div class="wrap apwopo-grid">
-    <div>
-      <div class="section-head">
-        <span class="eyebrow">Apwopo nou</span>
-        <h2>Yon lekòl ki mache ak kominote a</h2>
-      </div>
-      <p>Institution Mixte Excelsior de Delatte se yon lekòl ki chita nan Delatte, 7e seksyon kominal Petit-Goâve, kote fanmi yo jwenn yon kad serye pou timoun yo aprann ak grandi.</p>
-      <p>Nou akeyi ni tifi ni ti gason, depi Préscolaire rive Segondè, nan yon anviwonman kote disiplin, respè ak konesans mache ansanm.</p>
-      <p>Chak nivo gen orè ki adapte ak laj ak bezwen elèv yo, pou yo ka aprann nan pi bon kondisyon posib.</p>
-    </div>
-    <div class="levels">
-      <h3>Orè pa nivo</h3>
-      <ul>
-        <li><b>Préscolaire</b><span>7h50 - 1h30pm</span></li>
-        <li><b>1ye sik fondamantal</b><span>7h50 - 1h30pm</span></li>
-        <li><b>2yèm sik fondamantal</b><span>7h50 - 1h30pm</span></li>
-        <li><b>3yèm sik fondamantal</b><span>7h50 - 3h00pm</span></li>
-        <li><b>Segondè</b><span>12h - 5h00pm</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="enskripsyon">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Enskripsyon</span>
-      <h2>Enskri pitit ou pou ane a</h2>
-      <p>Ranpli fòm lan oswa vin depoze dokiman yo dirèkteman nan lekòl la, Kafou Dépêche #79, Delatte.</p>
-    </div>
-    <div class="ensk-grid">
-      <div class="req-card">
-        <h3>Dokiman ki nesesè</h3>
-        <ol>
-          <li>Batistè (kopi batistè elèv la)</li>
-          <li>Dènye kanè (bilten) klas li fin fè a</li>
-          <li>2 foto ID elèv la</li>
-        </ol>
-        <div class="fee">Frè enskripsyon: <b>500 goud</b></div>
-      </div>
-      <form id="enskForm">
-        <h3>Fòm enskripsyon</h3>
-        <p class="note">Enfòmasyon yo ap voye dirèkteman bay lekòl la pa imèl.</p>
-        <div class="field-row">
-          <div class="field">
-            <label for="pNom">Non elèv la</label>
-            <input type="text" id="pNom" required>
-          </div>
-          <div class="field">
-            <label for="pPrenom">Siyati elèv la</label>
-            <input type="text" id="pPrenom" required>
-          </div>
-        </div>
-        <div class="field">
-          <label for="pNivo">Nivo pou enskripsyon</label>
-          <select id="pNivo" required>
-            <option value="">Chwazi yon nivo</option>
-            <option>Préscolaire</option>
-            <option>1ye sik fondamantal</option>
-            <option>2yèm sik fondamantal</option>
-            <option>3yèm sik fondamantal</option>
-            <option>Segondè</option>
-          </select>
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="pTutNom">Non paran/responsab</label>
-            <input type="text" id="pTutNom" required>
-          </div>
-          <div class="field">
-            <label for="pTel">Telefòn</label>
-            <input type="tel" id="pTel" required>
-          </div>
-        </div>
-        <div class="field">
-          <label for="pMsg">Nòt anplis (opsyonèl)</label>
-          <textarea id="pMsg" rows="3"></textarea>
-        </div>
-        <button type="submit">Voye demann enskripsyon</button>
-        <div id="form-status"></div>
-      </form>
-    </div>
-  </div>
-</section>
-
-<section id="galri">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Galri Foto</span>
-      <h2>Lavi lekòl la</h2>
-      <p>Foto ap ajoute pi devan pou montre aktivite ak evènman lekòl la.</p>
-    </div>
-    <div class="galri-grid">
-      <div class="galri-item">Foto pral ajoute</div>
-      <div class="galri-item">Foto pral ajoute</div>
-      <div class="galri-item">Foto pral ajoute</div>
-      <div class="galri-item">Foto pral ajoute</div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <h4>Institution Mixte Excelsior de Delatte</h4>
-        <p>Kafou Dépêche #79, Delatte, 7e Petit-Goâve, Ayiti</p>
-      </div>
-      <div>
-        <h4>Kontak</h4>
-        <ul>
-          <li>Tel: 4810-1022</li>
-          <li>Imèl: jeanclaudemede9@gmail.com</li>
-        </ul>
-      </div>
-      <div>
-        <h4>Navigasyon</h4>
-        <ul>
-          <li><a href="#akey">Akèy</a></li>
-          <li><a href="#apwopo">Apwopo</a></li>
-          <li><a href="#enskripsyon">Enskripsyon</a></li>
-          <li><a href="#galri">Galri Foto</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">&copy; 2026 Institution Mixte Excelsior de Delatte. Tout dwa rezève.</div>
-  </div>
-</footer>
-
-<script>
-  document.getElementById('navToggle').addEventListener('click', function(){
-    document.getElementById('navMenu').classList.toggle('open');
-  });
-  document.querySelectorAll('#navMenu a').forEach(function(a){
-    a.addEventListener('click', function(){
-      document.getElementById('navMenu').classList.remove('open');
-    });
-  });
-
-  document.getElementById('enskForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    var nom = document.getElementById('pNom').value;
-    var prenom = document.getElementById('pPrenom').value;
-    var nivo = document.getElementById('pNivo').value;
-    var tutNom = document.getElementById('pTutNom').value;
-    var tel = document.getElementById('pTel').value;
-    var msg = document.getElementById('pMsg').value;
-
-    var subject = encodeURIComponent('Demann enskripsyon - ' + prenom + ' ' + nom);
-    var body = encodeURIComponent(
-      'Non elèv: ' + nom + '\n' +
-      'Prenon elèv: ' + prenom + '\n' +
-      'Nivo: ' + nivo + '\n' +
-      'Non paran/responsab: ' + tutNom + '\n' +
-      'Telefòn: ' + tel + '\n' +
-      'Nòt: ' + msg
-    );
-    window.location.href = 'mailto:jeanclaudemede9@gmail.com?subject=' + subject + '&body=' + body;
-    document.getElementById('form-status').textContent = 'W ap redirije nan imèl ou pou konfime voye demann lan.';
-  });
-</script>
-
-</body>
-</html>
+Releases
+No releases published
+Create a new release
+Deployments
+3
+ (3)
+github-pages
+4 hours ago
+Packages
+No packages published
+Publish your first package
+Contributors
+1
+ (1)
+@excelsiordelatte
+excelsiordelatteIMED
+Languages
+HTML
+100%
+Footer
+© 2026 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Community
+Docs
+Contact
+Manage cookies
+Do not share my personal information
+ 
